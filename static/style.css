@@ -1,0 +1,9 @@
+body{
+    
+    background-color: grey;
+    font-family: Arial;
+}
+li  { font-size: 36; }
+li:nth-child(1) {
+  color: blue;
+}

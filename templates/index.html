@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href={{ url_for('static', filename='style.css')}} />
+</head>
+<body>
+
+ 
+<img src={{im}}  /> <br />
+
+  Artist(s):
+
+{%for i in range(0, Lenght)%} 
+    {{Lst[i]}}
+    
+{%endfor%} 
+<br />
+  Title: {{n}} <br />
+  
+
+Preview: <a href={{p}}>Preview</a>
+  
+
+ 
+
+</body>
+</html>
