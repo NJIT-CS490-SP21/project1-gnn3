@@ -10,7 +10,7 @@ body{
     font-family: Arial;
 }
 table {
-    border: 12px gold;
+    border: 12px solid black;
     border-collapse: collapse;
     margin-bottom: 1em;
     width: 100%;
@@ -18,7 +18,7 @@ table {
 
 td,
 th {
-    border: 1px dashed gold;
+    border: 1px dashed black;
     padding: .2em .5em .2em .5em;
     text-align: left;
 }
