@@ -6,22 +6,34 @@
 <body>
 
  
-<img src={{im}}  /> <br />
+<img src={{im}} class="center">  <br />
 
-  Artist(s):
-
-{%for i in range(0, Lenght)%} 
-    {{Lst[i]}}
+<table>
+    <tr>
+        <th>Artists</th>
+        <th>Title</th>
+        <th>Album</th>
+    </tr>
+     <tr>
+            <td> {%for i in range(0, Lenght )%} 
+                {{Lst[i]}}
+                
+            {%endfor%}  </td>
+            <td>{{n}}</td>
+            <td>{{a}}</td>
+            
+            <td>
     
-{%endfor%} 
-<br />
-  Title: {{n}} <br />
   
-
-Preview: <a href={{p}}>Preview</a>
-  
-
  
+ <audio controls>
+  <source src={{p}} type="audio/mp3">
+ 
+Your browser does not support the audio element.
+</audio>
 
+
+  
+ </table>
 </body>
 </html>

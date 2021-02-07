@@ -1,9 +1,33 @@
 body{
-    
+   
+    height: 600px;
+    width: 800px;
+    margin: 0 auto;
+    padding: 0 2em;
+    background-color: white;
+    border: 1px solid black;
     background-color: grey;
     font-family: Arial;
 }
-li  { font-size: 36; }
-li:nth-child(1) {
-  color: blue;
+table {
+    border: 12px solid black;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px dashed black;
+    padding: .2em .5em .2em .5em;
+    text-align: left;
+}
+img {
+  border-radius: 70%;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

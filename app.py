@@ -5,6 +5,7 @@ import requests
 from flask import Flask, render_template
 app = Flask(__name__)
 @app.route("/")
+
 def foo():
     clientid = "b072122b54d34dd4b763ec520350c4bc"
     load_dotenv(find_dotenv())
@@ -27,12 +28,14 @@ def foo():
     y = len(response['tracks'])-1
     x = random.randint(0, y)
     i = response['tracks'][x]['album']['images'][1]['url']
+    a = response['tracks'][x]['album']['name']
     p = response['tracks'][x]['preview_url']
-    n = (response['tracks'][x]['name'])
+    n = response['tracks'][x]['name']
+  
     lst = []
     for elm in range(len(response['tracks'][x]['artists'])):
         lst.append((response['tracks'][x]['artists'][elm]['name']))
-    return render_template("index.html", im=i, p=p, n=n, Lst=lst, Lenghtn=len(lst))
+    return render_template("index.html", im=i, p=p, n=n, Lst=lst, a=a, Lenght=len(lst))
 app.run(port=int(os.getenv('PORT', 8080)),
-        host=os.getenv('IP', '0.0.0.0'),
+       host=os.getenv('IP', '0.0.0.0'),
        debug=True)
