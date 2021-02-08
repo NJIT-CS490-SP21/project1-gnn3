@@ -10,12 +10,13 @@ This is an Application that gets information about three artists on sotify and r
 
 ## Run Application
 1. Run command in terminal `python app.py`
+2. working in c9 environement should be able to view the output by clicking on tool then preview then preview running app
 
 ## Questions Answer
 ### a) What are at least 3 technical issues you encountered with your project? How did you fix them?
   - flask module was not working although it was already installed i kept getting error "No module names flask"
-  i googled and end up on a solution : i deleted  the virtualenv i created with command like "virtualenv flask"
-  the cd to flask, then activate a new virtualenv with command line "source bin/activate" then installed flask and it worked;
+  i googled and end up on a solution : i deleted  the virtualenv i created with command line "virtualenv flask"
+  then cd to flask, then activate a new virtualenv with command line "source bin/activate" and it worked;
   - My API request url did not have the country parameter had to concatenate '?market=US' with the url
   - could not get if statement working tried everything 
 ### b) What are known problems, if any, with your project? 
