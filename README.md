@@ -11,7 +11,7 @@ This is an Application that gets information about three artists on sotify and r
 ## Run Application
 1. Run command in terminal `python app.py`
 
-
+## Questions Answer
 a) What are at least 3 technical issues you encountered with your project? How did you fix them?
   - flask module was not working although it was already installed i kept getting error "No module names flask"
   i googled and end up on a solution : i deleted  the virtualenv i created with command like "virtualenv flask"
