@@ -21,12 +21,22 @@
             </td>
             <td>{{n}}</td>
             <td>{{a}}</td>
-            
-            <td>
-  <td> <audio controls>
+    
+           
+  <td> 
+  {% if p == None %} 
+    Sorry no preview
+{% else %}
+    <audio controls>
   <source src={{p}} type="audio/mp3">
   Your browser does not support the audio element.
-  </audio> </td>
+  </audio>
+{% endif %}
+  
+   </td>
+   
+  
+
 
 </tr>
   
