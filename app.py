@@ -35,9 +35,6 @@ def foo():
     lst = []
     for elm in range(len(response['tracks'][x]['artists'])):
         lst.append((response['tracks'][x]['artists'][elm]['name']))
-    
-    
-   
     lst2=[]
     for elm in lst:
         for elm2 in elm.split(' '):
