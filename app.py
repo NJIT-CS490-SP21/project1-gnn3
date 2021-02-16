@@ -54,15 +54,16 @@ def foo():
     response = requests.get(BASE_URL, headers=headers)
     response = response.json()
     n=n.lower()
+    lyric=' '
     for what in (response['response']['hits']):
         if n== what['result']['full_title'].lower().split('by')[0].strip(' '):
             path=what['result']['path']
             page_url = "http://genius.com" + path
             lyric = requests.get(page_url)
-            lyric = page_url
+            lyric = str(page_url)
             
             break
-        else : lyric=''
+        
     return render_template("index.html", im=i, p=p, n=n, Lst=lst, a=a, Lenght=len(lst),lyric=lyric)
 app.run(port=int(os.getenv('PORT', 8080)),
        host=os.getenv('IP', '0.0.0.0'), debug=True)
