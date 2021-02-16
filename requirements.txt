@@ -1,6 +1,7 @@
-
+dotenv==3.7.4.3
 Flask==1.1.2
 requests==2.6.0
 virtualenv==16.2.0
 virtualenv-clone==0.5.4
 virtualenvwrapper==4.8.4
+Django==1.11.10
