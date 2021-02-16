@@ -1,5 +1,5 @@
 import os
-import load_dotenv, find_dotenv
+from dotenv import load_dotenv, find_dotenv
 import random
 import requests 
 from flask import Flask, render_template
