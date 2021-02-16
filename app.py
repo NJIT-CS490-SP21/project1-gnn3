@@ -54,7 +54,7 @@ def foo():
     response = requests.get(BASE_URL, headers=headers)
     response = response.json()
     n=n.lower()
-    lyric=' '
+    lyric= 0
     for what in (response['response']['hits']):
         if n== what['result']['full_title'].lower().split('by')[0].strip(' '):
             path=what['result']['path']

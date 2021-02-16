@@ -40,8 +40,11 @@
  
  </table>
  
- 
+ {% if lyric == 0 %} 
+    Sorry no Lyric available
+{% else %}
 <p><a href={{lyric}}>Click here for the Lyric</a></p>
-{{lyric}}
+{% endif %}
+
 </body>
 </html>
