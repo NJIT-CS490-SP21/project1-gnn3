@@ -11,6 +11,7 @@ This is an Application that gets information about three artists on sotify and r
 ## Run Application
 1. Run command in terminal `python app.py`
 2. working in c9 environement should be able to view the output by clicking on tool then preview then preview running app
+3. the link to just display the app on the browser :https://arcane-crag-26124.herokuapp.com
 
 ## Questions Answer
 ### a) What are at least 3 technical issues you encountered with your project? How did you fix them?
