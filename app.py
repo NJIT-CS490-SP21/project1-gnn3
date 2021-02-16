@@ -3,6 +3,7 @@ from dotenv import load_dotenv, find_dotenv
 import random
 import requests 
 from flask import Flask, render_template
+
 app = Flask(__name__)
 @app.route("/")
 
@@ -31,10 +32,50 @@ def foo():
     a = response['tracks'][x]['album']['name']
     p = response['tracks'][x]['preview_url']
     n = response['tracks'][x]['name']
-  
     lst = []
     for elm in range(len(response['tracks'][x]['artists'])):
         lst.append((response['tracks'][x]['artists'][elm]['name']))
-    return render_template("index.html", im=i, p=p, n=n, Lst=lst, a=a, Lenght=len(lst))
+    
+    
+   
+    lst2=[]
+    for elm in lst:
+        for elm2 in elm.split(' '):
+            lst2.append(elm2)
+    for name in n.split(' '):
+        lst2.append(name)
+    
+    BASE_URL = 'https://api.genius.com/search?q='
+    for item in lst2:
+        BASE_URL = BASE_URL+item+'%20'
+    
+    genius_token = os.getenv('genius_token')
+    headers = {
+        'Authorization': 'Bearer {token}'.format(token=genius_token)}
+
+   
+    response = requests.get(BASE_URL, headers=headers)
+    response = response.json()
+    n=n.lower()
+    for what in (response['response']['hits']):
+        if n== what['result']['full_title'].lower().split('by')[0].strip(' '):
+            path=what['result']['path']
+            page_url = "http://genius.com" + path
+            lyric = requests.get(page_url)
+            lyric = page_url
+            
+            break
+        else : lyric=''
+    return render_template("index.html", im=i, p=p, n=n, Lst=lst, a=a, Lenght=len(lst),lyric=lyric)
 app.run(port=int(os.getenv('PORT', 8080)),
        host=os.getenv('IP', '0.0.0.0'), debug=True)
+   
+   
+
+            
+           
+            
+       
+    
+      
+  
